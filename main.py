@@ -30,11 +30,14 @@ def render_progressbar(total, iteration, prefix='', suffix='', length=30, fill='
     return '{0} |{1}| {2}% {3}'.format(prefix, pbar, percent, suffix)
 
 
-if __name__ == '__main__':
+def main():
     load_dotenv()
-    TG_CHAT_ID = os.getenv("TG_CHAT_ID")
     TG_TOKEN = os.getenv("TG_TOKEN")
     bot = ptbot.Bot(TG_TOKEN)
     bot.reply_on_message(wait)
     bot.run_bot()
+
+
+if __name__ == '__main__':
+    main()
 
